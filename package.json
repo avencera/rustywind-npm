@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "CLI for organizing Tailwind CSS classes",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "install": "node install.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/avencera/rustywind-npm.git"
@@ -13,6 +15,7 @@
     "tailwindcss",
     "headwind"
   ],
+  "postinstall": "npm run install",
   "author": "Praveen Perera",
   "license": "MIT",
   "bugs": {
