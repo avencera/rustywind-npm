@@ -1,6 +1,6 @@
 {
   "name": "rustywind",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "CLI for organizing Tailwind CSS classes",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,9 @@
   },
   "keywords": [
     "tailwind",
-    "tailwindcss",
-    "headwind"
+    "tailwind css",
+    "headwind",
+    "headwind cli"
   ],
   "postinstall": "npm run install",
   "author": "Praveen Perera",
