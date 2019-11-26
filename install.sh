@@ -149,8 +149,7 @@ if [ "$(curl --head --write-out "%{http_code}\n" --silent --output /dev/null "$u
   err "$url does not exist, you will need to build $crate from source"
 fi
 
-say "Making temp  dir"
-td=$(mktemp -d "${TMPDIR:-/tmp}/rustwind.XXXXXXXXXXXXXX" || mktemp -d || mktemp -d -t tmp || mktemp -d 2>/dev/null || mktemp -d -t 'le')
+td=$(mktemp -d || mktemp -d -t tmp)
 curl -sL "$url" | tar -C "$td" -xz
 
 say_err "Installing to: $dest"
