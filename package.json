@@ -4,10 +4,11 @@
   "description": "CLI for organizing Tailwind CSS classes",
   "main": "index.js",
   "scripts": {
-    "install": "sh install.sh --git avencera/rustywind -f --to $(npm bin -g)",
+    "install": "BIN_PATH=$(npm bin -g) node install.js",
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpileOnly ./install.ts",
-    "prod": "tsc -p ."
+    "build": "tsc -p .",
+    "prod": "npm run build"
   },
   "repository": {
     "type": "git",
