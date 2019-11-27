@@ -5,6 +5,7 @@ const rp = require("request-promise");
 const fs = require("fs");
 const decompress = require("decompress");
 const decompressTargz = require("decompress-targz");
+
 ////////////////////////////////////////////////////////////////////////////////
 const APP_NAME = "rustywind";
 const REPO = "avencera/rustywind";
@@ -12,8 +13,6 @@ const GITHUB_REPO = `https://github.com/${REPO}`;
 ////////////////////////////////////////////////////////////////////////////////
 
 const INSTALL_LOCATION = process.cwd();
-
-console.log("Install location: ", INSTALL_LOCATION);
 
 const randomString = () => {
   return Math.random()
