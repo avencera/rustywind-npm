@@ -17,6 +17,7 @@
     "headwind cli"
   ],
   "postinstall": "npm run install --only=prod",
+  "bin": "./rustywind",
   "author": "Praveen Perera",
   "license": "MIT",
   "bugs": {

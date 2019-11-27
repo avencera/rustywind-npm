@@ -11,7 +11,9 @@ const REPO = "avencera/rustywind";
 const GITHUB_REPO = `https://github.com/${REPO}`;
 ////////////////////////////////////////////////////////////////////////////////
 
-const NPM_BIN_PATH = process.env.BIN_PATH || "/usr/local/bin";
+const INSTALL_LOCATION = process.cwd();
+
+console.log("Install location: ", INSTALL_LOCATION);
 
 const randomString = () => {
   return Math.random()
@@ -87,8 +89,8 @@ async function download() {
     console.log(`\n ------------- Something happened: ${error} --------- \n`);
   });
 
-  console.log(`Installing to: ${NPM_BIN_PATH}`);
-  await decompress(release, NPM_BIN_PATH, {
+  console.log(`Installing to: ${INSTALL_LOCATION}`);
+  await decompress(release, INSTALL_LOCATION, {
     plugins: [decompressTargz()]
   });
 
