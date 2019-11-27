@@ -5,7 +5,6 @@ const rp = require("request-promise");
 const fs = require("fs");
 const decompress = require("decompress");
 const decompressTargz = require("decompress-targz");
-const moveFile = require("move-file");
 ////////////////////////////////////////////////////////////////////////////////
 const APP_NAME = "rustywind";
 const REPO = "avencera/rustywind";
@@ -60,6 +59,9 @@ async function download() {
   const url = `${GITHUB_REPO}/releases/download/${tag}/${APP_NAME}-${tag}-${getArch()}-${getPlatform()}.tar.gz`;
 
   const tmpdir = os.tmpdir();
+
+  console.log("temp dir:", tmpdir);
+
   const release = `${tmpdir}/${APP_NAME}-${tag}-${getArch()}-${getPlatform()}-${randomString()}.tar.gz`;
 
   console.log(`Downloading ${APP_NAME}`);
@@ -87,20 +89,12 @@ async function download() {
     console.log(`\n ------------- Something happened: ${error} --------- \n`);
   });
 
-  const binPathDir = release.replace(".tar.gz", "");
-
-  console.log(`Uncompressing bin`);
-  await decompress(release, binPathDir, {
+  console.log(`Installing to: ${NPM_BIN_PATH}`);
+  await decompress(release, NPM_BIN_PATH, {
     plugins: [decompressTargz()]
   });
 
-  const binPath = `${binPathDir}/${APP_NAME}`;
-
-  console.log(`Installing to: ${NPM_BIN_PATH}`);
-  (async () => {
-    await moveFile(binPath, `${NPM_BIN_PATH}/${APP_NAME}`);
-    console.log("Installation complete\n");
-  })();
+  console.log("Installation complete\n");
 }
 
 download();

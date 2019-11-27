@@ -20,13 +20,9 @@
   "author": "Praveen Perera",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/avencera/rustywind-npm/issues"
+    "url": "https://github.com/avencera/rustywind/issues"
   },
-  "homepage": "https://github.com/avencera/rustywind-npm#readme",
-  "devDependencies": {
-    "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "^3.7.2"
-  },
+  "homepage": "https://github.com/avencera/rustywind#readme",
   "dependencies": {
     "decompress": "^4.2.0",
     "decompress-targz": "^4.1.1",
