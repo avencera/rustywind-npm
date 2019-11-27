@@ -4,11 +4,7 @@
   "description": "CLI for organizing Tailwind CSS classes",
   "main": "index.js",
   "scripts": {
-    "install": "BIN_PATH=$(npm bin -g) node install.js",
-    "tsc": "tsc",
-    "dev": "ts-node-dev --respawn --transpileOnly ./install.ts",
-    "build": "tsc -p .",
-    "prod": "npm run build"
+    "install": "BIN_PATH=$(npm bin -g) node install.js"
   },
   "repository": {
     "type": "git",
@@ -28,15 +24,14 @@
   },
   "homepage": "https://github.com/avencera/rustywind-npm#readme",
   "devDependencies": {
-    "@types/node": "^12.12.14",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.2"
   },
   "dependencies": {
     "decompress": "^4.2.0",
     "decompress-targz": "^4.1.1",
+    "move-file": "^1.2.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.5",
-    "tar": "^5.0.5"
+    "request-promise": "^4.2.5"
   }
 }
