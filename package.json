@@ -4,7 +4,10 @@
   "description": "CLI for organizing Tailwind CSS classes",
   "main": "index.js",
   "scripts": {
-    "install": "node install.js"
+    "install-bin": "node install.js",
+    "tsc": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly ./install.ts",
+    "prod": "tsc -p ."
   },
   "repository": {
     "type": "git",
@@ -16,11 +19,23 @@
     "headwind",
     "headwind cli"
   ],
-  "postinstall": "npm run install",
+  "postinstall": "npm run install-bin",
   "author": "Praveen Perera",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/avencera/rustywind-npm/issues"
   },
-  "homepage": "https://github.com/avencera/rustywind-npm#readme"
+  "homepage": "https://github.com/avencera/rustywind-npm#readme",
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "decompress": "^4.2.0",
+    "decompress-targz": "^4.1.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
+    "tar": "^5.0.5"
+  }
 }
