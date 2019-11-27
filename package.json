@@ -1,10 +1,10 @@
 {
   "name": "rustywind",
-  "version": "0.2.8",
+  "version": "0.2.7",
   "description": "CLI for organizing Tailwind CSS classes",
   "main": "index.js",
   "scripts": {
-    "install-bin": "node install.js",
+    "install": "sh install.sh --git avencera/rustywind -f --to $(npm bin -g)",
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpileOnly ./install.ts",
     "prod": "tsc -p ."
@@ -19,7 +19,7 @@
     "headwind",
     "headwind cli"
   ],
-  "postinstall": "npm run install-bin",
+  "postinstall": "npm run install --only=prod",
   "author": "Praveen Perera",
   "license": "MIT",
   "bugs": {

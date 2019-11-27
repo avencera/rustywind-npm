@@ -149,7 +149,7 @@ if [ "$(curl --head --write-out "%{http_code}\n" --silent --output /dev/null "$u
   err "$url does not exist, you will need to build $crate from source"
 fi
 
-td="."
+td=$(mktemp -d || mktemp -d -t tmp)
 curl -sL "$url" | tar -C "$td" -xz
 
 say_err "Installing to: $dest"
