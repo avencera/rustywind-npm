@@ -60,8 +60,6 @@ async function download() {
 
   const tmpdir = os.tmpdir();
 
-  console.log("temp dir:", tmpdir);
-
   const release = `${tmpdir}/${APP_NAME}-${tag}-${getArch()}-${getPlatform()}-${randomString()}.tar.gz`;
 
   console.log(`Downloading ${APP_NAME}`);
