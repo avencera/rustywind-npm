@@ -3,6 +3,7 @@ const os = require("os");
 const request = require("request");
 const rp = require("request-promise");
 const fs = require("fs");
+const rimraf = require("rimraf");
 const decompress = require("decompress");
 const decompressTargz = require("decompress-targz");
 
@@ -94,6 +95,11 @@ async function download() {
   });
 
   console.log("Installation complete\n");
+
+  console.log("Cleaning up");
+  await rimraf(`${INSTALL_LOCATION}/node_modules`, _ =>
+    console.log(`Clean up complete\n`)
+  );
 }
 
 download();
