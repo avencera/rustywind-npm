@@ -4,7 +4,7 @@
   "description": "CLI for organizing Tailwind CSS classes",
   "main": "index.js",
   "scripts": {
-    "install": "BIN_PATH=$(npm bin -g) node install.js"
+    "install": "node install.js"
   },
   "repository": {
     "type": "git",
