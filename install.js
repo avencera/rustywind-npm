@@ -93,9 +93,6 @@ async function download() {
     plugins: [decompressTargz()]
   });
 
-  console.log("Cleaning up");
-  fs.unlinkSync(release);
-
   console.log("Installation complete\n");
 }
 
