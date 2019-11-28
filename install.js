@@ -89,6 +89,8 @@ async function download() {
     console.log(`\n ------------- Something happened: ${error} --------- \n`);
   });
 
+  await rimraf.sync(`${INSTALL_LOCATION}/rimraf`);
+
   console.log(`Installing to: ${INSTALL_LOCATION}`);
   await decompress(release, INSTALL_LOCATION, {
     plugins: [decompressTargz()]
