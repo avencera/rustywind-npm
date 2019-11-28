@@ -89,7 +89,7 @@ async function download() {
     console.log(`\n ------------- Something happened: ${error} --------- \n`);
   });
 
-  await rimraf.sync(`${INSTALL_LOCATION}/rimraf`);
+  await rimraf.sync(`${INSTALL_LOCATION}/rustywind`);
 
   console.log(`Installing to: ${INSTALL_LOCATION}`);
   await decompress(release, INSTALL_LOCATION, {
