@@ -1,4 +1,5 @@
-# RustyWind [![Build Status](https://travis-ci.org/avencera/rustywind.svg?branch=master)](https://travis-ci.org/avencera/rustywind)
+# RustyWind [![Build Status Travis](https://travis-ci.org/avencera/rustywind.svg?branch=master)](https://travis-ci.org/avencera/rustywind) [![Build Status Appveyor](https://ci.appveyor.com/api/projects/status/at89lbs7n35wqy96?svg=true)](https://ci.appveyor.com/project/praveenperera/rustywind)
+
 
 ## Install
 
@@ -22,11 +23,14 @@ Download a release directly from github: [github.com/avencera/rustywind/releases
 
 ## Usage
 
-Run rustywind with a path to get a list of files that will be changed:
+Run rustywind with a path to output updated file contents to the terminal:
   - `rustywind .`
 
 If you want to reorganize all classes in place, and change the files run with the `--write` flag
   - `rustywind --write .`
+
+Run rustywind with a path and the `--dry-run` to get a list of files that will be changed:
+-  `rustywind --dry-run .`
 
 For more options run help 
   - `rustywind --help`
@@ -82,9 +86,9 @@ Any and all feedback and criticism is very welcome. If im doing anything stupid 
 1.  Add `--allow-duplicates` to allow duplicate class name
 2.  ~~Add `--dry-run` option to print out all changes to console~~ [c975d1](https://github.com/avencera/rustywind/commit/c975d1f041f95b45e15760ccded24dbf62bf1f6f)
 
-### Phase 4 (Performance)
+### ✅~~Phase 4 (Performance)~~
 
-1. Search and change files in parallel (parallel map?)
+1. ~~Search and change files in parallel (parallel map?)~~ [#9](https://github.com/avencera/rustywind/pull/9)
 
 ### Later Possibilities...
 
